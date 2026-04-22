@@ -12,6 +12,9 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL || 'http://localhost:8000';
 
+// Trust proxy (important for Render deployment)
+app.set('trust proxy', 1);
+
 // Configure multer for file uploads
 const upload = multer({
   storage: multer.memoryStorage(),
