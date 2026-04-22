@@ -1,24 +1,27 @@
+# Core API Framework
 setuptools>=65.0
 wheel
 fastapi==0.108.0
 uvicorn[standard]==0.27.0
-vaderSentiment==3.3.2
 pydantic==2.4.2
 python-multipart==0.0.6
 
-# Lightweight core dependencies for free tier
+# Sentiment Analysis
+vaderSentiment==3.3.2
+
+# Data Processing & ML Foundation
 numpy==1.26.4
 pandas==2.1.3
 scipy==1.11.4
 scikit-learn==1.3.2
 
-# Heavy dependencies - temporarily disabled for free tier build
+# File Processing (Optional - uncomment if needed)
 # openpyxl==3.1.2
 # emoji==2.10.0
 # python-magic-bin==0.4.14
 
-# Premium ML Models
-# transformers==4.36.2  # Commented for free tier deployment
+# Advanced ML Models (Optional - uncomment for production with sufficient resources)
+# transformers==4.36.2
 # torch==2.1.2
 # sentencepiece==0.1.99
 # accelerate==0.25.0

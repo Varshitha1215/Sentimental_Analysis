@@ -4,6 +4,29 @@ A production-ready, full-stack machine learning application for sentiment analys
 
 ---
 
+## ⚡ Quick Start
+
+Get the platform running locally in **5 minutes**:
+
+```bash
+# 1. Python Engine (Terminal 1)
+cd python-engine
+python -m venv .venv && .venv\Scripts\activate  # Windows
+pip install -r requirements.txt
+python main.py
+
+# 2. Backend (Terminal 2)
+cd backend && npm install && npm start
+
+# 3. Frontend (Terminal 3)
+cd frontend && npm install && npm start
+# Opens http://localhost:3000 automatically
+```
+
+📖 **[Detailed Setup Guide →](LOCAL_SETUP.md)**
+
+---
+
 ## ✨ Key Features
 
 ### 🤖 Multiple ML Models (75-98% Accuracy)
