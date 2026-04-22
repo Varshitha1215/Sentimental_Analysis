@@ -1,23 +1,22 @@
 fastapi==0.109.0
 uvicorn==0.27.0
-pandas==2.1.4
 vaderSentiment==3.3.2
 pydantic==2.5.3
 python-multipart==0.0.6
 
+# Lightweight core dependencies for free tier
+numpy==1.24.3
+
+# Heavy dependencies - temporarily disabled for free tier build
+# pandas==2.1.4  # Causes compilation errors on free tier
+# openpyxl==3.1.2
+# scipy==1.11.4
+# scikit-learn==1.3.2
+# emoji==2.10.0
+# python-magic-bin==0.4.14
+
 # Premium ML Models
-# transformers==4.36.2  # Commented for free tier deployment - will install on-demand
+# transformers==4.36.2  # Commented for free tier deployment
 # torch==2.1.2
-sentencepiece==0.1.99
-accelerate==0.25.0
-
-# File Processing
-python-magic-bin==0.4.14
-openpyxl==3.1.2
-
-# Trend Analysis
-scipy==1.11.4
-scikit-learn==1.3.2
-
-# Text Preprocessing
-emoji==2.10.0
+# sentencepiece==0.1.99
+# accelerate==0.25.0
