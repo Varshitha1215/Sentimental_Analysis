@@ -15,16 +15,34 @@ const PYTHON_SERVICE_URL = process.env.PYTHON_SERVICE_URL || 'http://localhost:8
 // Trust proxy (important for Render deployment)
 app.set('trust proxy', 1);
 
+// Disable X-Powered-By header for security
+app.disable('x-powered-by');
+
 // Configure multer for file uploads
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: { fileSize: 50 * 1024 * 1024 }, // 50MB limit
 });
 
-// Middleware
-app.use(cors());
+// Middleware - CORS with permissive settings for Render
+const corsOptions = {
+  origin: true, // Allow all origins
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
+
+// Express middleware
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
+
+// Add host header validation bypass for Render
+app.use((req, res, next) => {
+  res.removeHeader('X-Powered-By');
+  next();
+});
 
 // MongoDB Connection
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/sentiment_analysis';
