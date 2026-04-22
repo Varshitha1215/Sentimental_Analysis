@@ -6,8 +6,8 @@ pydantic==2.5.3
 python-multipart==0.0.6
 
 # Premium ML Models
-transformers==4.36.2
-torch==2.1.2
+# transformers==4.36.2  # Commented for free tier deployment - will install on-demand
+# torch==2.1.2
 sentencepiece==0.1.99
 accelerate==0.25.0
 
