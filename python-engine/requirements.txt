@@ -1,13 +1,13 @@
 setuptools>=65.0
 wheel
-fastapi==0.109.0
-uvicorn==0.27.0
+fastapi==0.108.0
+uvicorn[standard]==0.27.0
 vaderSentiment==3.3.2
-pydantic==2.5.3
+pydantic==2.4.2
 python-multipart==0.0.6
 
 # Lightweight core dependencies for free tier
-numpy>=1.26.0
+numpy==1.26.4
 
 # Heavy dependencies - temporarily disabled for free tier build
 # pandas==2.1.4  # Causes compilation errors on free tier
